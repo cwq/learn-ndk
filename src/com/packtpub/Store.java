@@ -8,6 +8,10 @@ public class Store {
 	static {
 		System.loadLibrary("store");
 	}
+	
+	public native void initializeStore();
+	
+	public native void finalizeStore();
 
 	public native int getInteger(String pKey) throws NotExistingKeyException,
 			InvalidTypeException;

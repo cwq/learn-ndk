@@ -61,6 +61,21 @@ public class StoreActivity extends Activity {
 		mStore = new Store();
 	}
 	
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		mStore.initializeStore();
+		mStore.setInteger("watcherCounter", 0);
+	}
+	
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		mStore.finalizeStore();
+	}
+	
 	private void onGetValue() {
 		String lKey = mUIKeyEdit.getText().toString();
 		StoreType lType = (StoreType) mUITypeSpinner.getSelectedItem();

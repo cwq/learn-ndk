@@ -4,6 +4,6 @@ include $(CLEAR_VARS)
 
 LOCAL_CFLAGS := -DHAVE_INTTYPES_H
 LOCAL_MODULE := store
-LOCAL_SRC_FILES := com_packtpub_Store.c Store.c
+LOCAL_SRC_FILES := com_packtpub_Store.c Store.c StoreWatcher.c
 
 include $(BUILD_SHARED_LIBRARY)

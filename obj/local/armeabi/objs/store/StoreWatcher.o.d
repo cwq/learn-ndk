@@ -1,5 +1,5 @@
-obj/local/armeabi/objs/store/com_packtpub_Store.o: \
- jni/com_packtpub_Store.c jni/com_packtpub_Store.h \
+obj/local/armeabi/objs/store/StoreWatcher.o: jni/StoreWatcher.c \
+ jni/StoreWatcher.h jni/Store.h \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/jni.h \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -9,7 +9,6 @@ obj/local/armeabi/objs/store/com_packtpub_Store.o: \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/_types.h \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/machine/_types.h \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/_wchar_limits.h \
- jni/Store.h jni/StoreWatcher.h \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/pthread.h \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/time.h \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/time.h \
@@ -38,9 +37,16 @@ obj/local/armeabi/objs/store/com_packtpub_Store.o: \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/signal.h \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm-generic/signal.h \
  E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/sigcontext.h \
- E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sched.h
+ E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sched.h \
+ E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/unistd.h \
+ E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/select.h \
+ E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/sysconf.h \
+ E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/capability.h \
+ E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/pathconf.h
 
-jni/com_packtpub_Store.h:
+jni/StoreWatcher.h:
+
+jni/Store.h:
 
 E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/jni.h:
 
@@ -59,10 +65,6 @@ E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/_types.
 E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/machine/_types.h:
 
 E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/_wchar_limits.h:
-
-jni/Store.h:
-
-jni/StoreWatcher.h:
 
 E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/pthread.h:
 
@@ -121,3 +123,13 @@ E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm-generic
 E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/asm/sigcontext.h:
 
 E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sched.h:
+
+E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/unistd.h:
+
+E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/select.h:
+
+E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/sys/sysconf.h:
+
+E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/linux/capability.h:
+
+E:/android/android-ndk-r9d/platforms/android-19/arch-arm/usr/include/pathconf.h:

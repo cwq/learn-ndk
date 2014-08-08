@@ -1,9 +1,31 @@
 #include "com_packtpub_Store.h"
 #include "Store.h"
+#include "StoreWatcher.h"
 #include <stdint.h>
 #include <string.h>
 
-static Store gStore = { { }, 0 };
+static Store gStore;
+static StoreWatcher mStoreWatcher;
+
+JNIEXPORT void JNICALL Java_com_packtpub_Store_initializeStore(JNIEnv* pEnv,
+		jobject pThis) {
+	gStore.mLength = 0;
+	startWatcher(pEnv, &mStoreWatcher, &gStore, pThis);
+}
+
+JNIEXPORT void JNICALL Java_com_packtpub_Store_finalizeStore(JNIEnv* pEnv,
+		jobject pThis) {
+	stopWatcher(pEnv, &mStoreWatcher);
+
+	StoreEntry* lEntry = gStore.mEntries;
+	StoreEntry* lEntryEnd = lEntry + gStore.mLength;
+	while (lEntry < lEntryEnd) {
+		free(lEntry->mKey);
+		releaseEntryValue(pEnv, lEntry);
+		++lEntry;
+	}
+	gStore.mLength = 0;
+}
 
 JNIEXPORT jint JNICALL Java_com_packtpub_Store_getInteger(JNIEnv* pEnv,
 		jobject pThis, jstring pKey) {
