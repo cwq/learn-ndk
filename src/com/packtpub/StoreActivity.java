@@ -22,7 +22,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class StoreActivity extends Activity {
+public class StoreActivity extends Activity implements StoreListener {
 	private EditText mUIKeyEdit, mUIValueEdit;
 	private Spinner mUITypeSpinner;
 	private Button mUIGetButton, mUISetButton;
@@ -58,7 +58,7 @@ public class StoreActivity extends Activity {
 				onSetValue();
 			}
 		});
-		mStore = new Store();
+		mStore = new Store(this);
 	}
 	
 	@Override
@@ -183,6 +183,24 @@ public class StoreActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.store, menu);
 		return true;
+	}
+
+	@Override
+	public void onAlert(int pValue) {
+		// TODO Auto-generated method stub
+		displayError(String.format("%1$d is not an allowed integer", pValue));
+	}
+
+	@Override
+	public void onAlert(String pValue) {
+		// TODO Auto-generated method stub
+		displayError(String.format("%1$s is not an allowed string", pValue));
+	}
+
+	@Override
+	public void onAlert(Color pValue) {
+		// TODO Auto-generated method stub
+		displayError(String.format("%1$s is not an allowed color", pValue.toString()));
 	}
 
 }

@@ -1,12 +1,58 @@
 package com.packtpub;
 
+import android.os.Handler;
+
 import com.packtpub.exception.InvalidTypeException;
 import com.packtpub.exception.NotExistingKeyException;
 
-public class Store {
+public class Store implements StoreListener {
 
 	static {
 		System.loadLibrary("store");
+	}
+	
+	private Handler mHandler;
+	private StoreListener mDelegateListener;
+	
+	public Store(StoreListener pListener) {
+		mHandler = new Handler();
+		mDelegateListener = pListener;
+	}
+	
+	@Override
+	public void onAlert(final int pValue) {
+		// TODO Auto-generated method stub
+		mHandler.post(new Runnable() {
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				mDelegateListener.onAlert(pValue);
+			}
+		});
+	}
+
+	@Override
+	public void onAlert(final String pValue) {
+		// TODO Auto-generated method stub
+		mHandler.post(new Runnable() {
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				mDelegateListener.onAlert(pValue);
+			}
+		});
+	}
+
+	@Override
+	public void onAlert(final Color pValue) {
+		// TODO Auto-generated method stub
+		mHandler.post(new Runnable() {
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				mDelegateListener.onAlert(pValue);
+			}
+		});
 	}
 	
 	public native void initializeStore();
